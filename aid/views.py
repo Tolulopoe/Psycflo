@@ -1,15 +1,31 @@
 from django.http import HttpResponse
 from django.template import loader
-'''from django.shortcuts import render'''
-from .models import Aid
+from .models import AidRequest 
 
-def Aid_objects(request):
-    aids=Aid.objects.all().values()
-    template =loader.get_template('Aidobjects.html')
-    context={
-        'aids':'aids',
+def aid_objects(request):
+    aids = AidRequest.objects.all()
+    template = loader.get_template('Aidobjects.html')
+    context = {
+        'aids': aids,  
     }
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))
 
 
-# Create your views here.
+
+from rest_framework import generics
+from .serializers import AidRequestSerializer
+
+class AidRequestCreateView(generics.CreateAPIView):
+    queryset = AidRequest.objects.all()
+    serializer_class = AidRequestSerializer
+
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+
+class AidRequestListView(generics.ListAPIView):
+    queryset = AidRequest.objects.all()
+    serializer_class = AidRequestSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['brandname']  
+    search_fields = ['brandname', 'message', 'title']
+

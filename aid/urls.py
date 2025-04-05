@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import dummy_aid_view  # replace this with real view later
+from .views import AidRequestCreateView, AidRequestListView
 
 urlpatterns = [
-    path('', dummy_aid_view, name='aid-home'),
+    path('', AidRequestListView.as_view(), name='aid-list'),
+    path('create/', AidRequestCreateView.as_view(), name='aid-create'),
+    path('list/', AidRequestListView.as_view(), name='aid-list'),
 ]
