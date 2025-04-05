@@ -17,9 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('api/chatbot/', include('chatbot.urls')), 
+#     path('',include ('aid.urls')),
+    
+# ]
+
+# psycflo/urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/chatbot/', include('chatbot.urls')), 
-    path('',include ('aid.urls')),
-    
+    path('api/therapy/', include('therapy.urls')),
 ]
