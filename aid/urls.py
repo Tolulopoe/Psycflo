@@ -1,6 +1,6 @@
-from .views import Aid_objects
+from .views import AidObjects
 from django.urls import path
 
-urlpatterns={
-    path('aid/',Aid_objects, name='Aidobjects')
-}
+urlpatterns = [
+    path('aid/', AidObjects, name='Aidobjects')
+]

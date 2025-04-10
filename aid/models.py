@@ -7,7 +7,7 @@ class Aid(models.Model):
     message=models.TextField()
     submitted_at=models.DateTimeField(auto_now_add=True)
     location=models.CharField(max_length=20)
-    phonenumber=models.CharField()
+    phonenumber=models.CharField(max_length=20)
 
 
     def __str__(self):
