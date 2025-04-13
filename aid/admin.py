@@ -1,6 +1,6 @@
 from django.contrib import admin
-from.models import Aid
+from.models import AidRequest
 # Register your models here.
-admin.site.register(Aid)
+admin.site.register(AidRequest)
 class MemberAdmin(admin.ModelAdmin):
   list_display = ("brandname",  "donated_at",)
