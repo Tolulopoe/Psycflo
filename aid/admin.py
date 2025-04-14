@@ -4,3 +4,8 @@ from.models import AidRequest
 admin.site.register(AidRequest)
 class MemberAdmin(admin.ModelAdmin):
   list_display = ("brandname",  "donated_at",)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> aid-endpoint
