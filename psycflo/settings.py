@@ -38,7 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', #added these for user authentication
+    'rest_framework_simplejwt',
     'users', 
+    'community',
+    'therapy',
+    'aid',
+    'chatbot', 
+    
 ]
 
 MIDDLEWARE = [
