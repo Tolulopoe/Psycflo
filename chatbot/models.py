@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class ChatbotMessage(models.Model):
     user_input = models.TextField()
     bot_response = models.TextField()
