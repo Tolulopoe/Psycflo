@@ -84,8 +84,4 @@ class SessionRoom(models.Model):
     appointment = models.OneToOneField(Appointment, on_delete=models.CASCADE)
     room_link = models.URLField()
     session_status = models.CharField(max_length=15, choices=SESSION_STATUS, default='not_started')
-<<<<<<< HEAD
     created_at = models.DateTimeField(auto_now_add=True)
-=======
-    created_at = models.DateTimeField(auto_now_add=True)
->>>>>>> aid-endpoint

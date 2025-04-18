@@ -23,7 +23,7 @@ urlpatterns = [
      path('admin/', admin.site.urls),
      path('api/therapy/', include('therapy.urls')),
      path('api/aid/', include('aid.urls')),
-     path('api/', include('users.urls')),
+     #path('api/', include('users.urls')),
      path('api/community/', include('community.urls')),
      #below is to show a home page view to the api for the community page it can be modified later, redirecting to the posts page.
      # just to avoid Page not found (404) error at /api/community/
