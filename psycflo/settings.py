@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'therapy',
     'aid',
     'chatbot', 
+    'mood_tracker',
     
 ]
 
@@ -81,14 +82,24 @@ WSGI_APPLICATION = 'psycflo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import os
+import environ
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'psycoflo',
-        'USER': 'postgres',
-        'PASSWORD': 'root123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+       
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
