@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class AidRequest(models.Model):
     id=models.AutoField(primary_key=True)
@@ -30,4 +31,15 @@ class donors(models.Model):
     def __str__(self):
         return f"{self.brandname} {self.donated_at}"
     
-    
+
+
+
+class AidRequest(models.Model):
+ fullname = models.CharField(max_length=255)
+ email = models.CharField(max_length=255)
+ state = models.CharField(max_length=255)
+ country = models.CharField(max_length=255)
+ localgovernment= models.CharField(max_length=255)
+ phoneno= models.IntegerField()
+
+
