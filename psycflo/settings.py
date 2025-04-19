@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework', #added these for user authentication
     'rest_framework_simplejwt',
+    'rest_framework.authtoken',
     'users', 
     'community',
     'therapy',
