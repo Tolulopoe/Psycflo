@@ -5,3 +5,6 @@ admin.site.register(AidRequest)
 admin.site.register(donors)
 class MemberAdmin(admin.ModelAdmin):
   list_display = ("brandname",  "donated_at",)
+
+
+
